@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: english-learning-hub
+    runtime: python
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "cd /opt/render/project/src && gunicorn config.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: english-learning-db
+          property: connectionString
+    healthCheckPath: /
+
+databases:
+  - name: english-learning-db
+    databaseName: english_learning_db
+    user: english_user
