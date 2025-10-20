@@ -135,6 +135,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # INSTALLED_APPS += ['rest_framework.authtoken']
 
 REST_FRAMEWORK = {
+    'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
@@ -177,10 +178,11 @@ AUTH_USER_MODEL = 'accounts.User'
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
+
+DATETIME_FORMAT = 'd.m.Y H:i:s'
+USE_L10N = True
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_TZ = True
 
