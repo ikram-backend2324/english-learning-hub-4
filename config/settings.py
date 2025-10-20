@@ -232,6 +232,14 @@ JAZZMIN_SETTINGS = {
         "fill_in_blank",
         "essay_writing",
     ],
+    # Add a frontend link in the top navbar
+    "topmenu_links": [
+        # Admin index
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+
+        # Your frontend main site
+        {"name": "Main Site 🌐", "url": "https://creative-teacher.netlify.app", "new_window": True},
+    ],
 
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
@@ -241,6 +249,8 @@ JAZZMIN_SETTINGS = {
     "use_google_fonts_cdn": True,
     "show_ui_builder": True,
 }
+
+LOGOUT_REDIRECT_URL = 'https://creative-teacher.netlify.app/'
 
 # Static files (CSS, JavaScript, Images)
 
